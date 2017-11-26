@@ -21,7 +21,7 @@ const convertCsvToJson = (
     })
     .on('done', error => {
       if (error) return console.log(error)
-      const outputData = JSON.stringify(outputJSON)
+      const outputData = JSON.stringify(outputJSON, null, 2)
       // Write JSON to file
       fs.writeFileSync(path.join(__dirname, 'customer-data.json'), outputData)
       console.log('Conversion done\nJSON data saved to ./customer-data.json')
